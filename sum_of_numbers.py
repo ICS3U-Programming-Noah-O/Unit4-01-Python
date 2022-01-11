@@ -21,15 +21,21 @@ def main():
         # Make sure user input is an integer
         user_num_int = int(user_num)
 
-        # Loop that calculates the sum of all of the whole numbers up to and
-        # including the user number
-        while number_counter <= user_num_int:
-            total = total + number_counter
-            number_counter = number_counter + 1
+        # Makes sure that user number is positive
+        if user_num_int >= 0:
+            # Loop that calculates the sum of all of the whole numbers up to
+            # and including the user number
+            while number_counter <= user_num_int:
+                total = total + number_counter
+                print("Tracking {} times through the loop".format(number_counter))
+                number_counter = number_counter + 1
+                print(" ")
 
-        # Print final result
-        print("The sum of all whole numbers from 0 to {}".format(user_num) +
-              " is {}.".format(total))
+            # Print final result
+            print("The sum of all whole numbers from 0 to {}".format(user_num)
+                  + " is {}.".format(total))
+        else:
+            print("{} is not a positive number.".format(user_num_int))
 
     except Exception:
         # Prevent crash by displaying error message if user
